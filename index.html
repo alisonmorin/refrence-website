@@ -37,7 +37,7 @@
           <dt><strong>No spaces:</strong> URLs cannot have spaces in them</dt>
             <dd>Good example: chocolate-cake-recipe.html</dd>
             <dd>Bad example: chocolate cake recipe.html</dd>
-          <dt><strong>Only letters, numbers, and dashes:</strong> URLs use limited amount of charcaters. Dashes ae word seperators, underscores are word connectors.</dt>
+          <dt><strong>Only letters, numbers, and dashes:</strong> URLs use limited amounts of charcaters. Dashes ae word seperators, underscores are word connectors.</dt>
             <dd>Good example: west-coast-art-2021.html</dd>
             <dd>Bad example: #1-blueberry_muffin-recipe.html</dd>
         </dl>
@@ -53,6 +53,87 @@
           Pretend every commit starts with the phrase: "This commit will..."
         </ul>
       </article>
+    </section>
+
+    <section id="html-tags">
+      <h2>Commonly Used HTML Tags</h2>
+      <ul>
+        <li><strong>(h1) to (h6) tags:</strong> Used to mark headings according to their importance. H1 being the most important and biggest, while H6 is the least important and smallest.</li>
+        <li><strong>(p) tags:</strong> Defines a paragraph of text.</li>
+        <li><strong>(ul) and (li) tags:</strong> This is an unordered list tag and a list item tag. This creates a bullet list</li>
+        <li><strong>(ol) and (li) tags:</strong> This is an ordered list tag and a list item tag. This creates a numbered list.</li>
+        <li><strong>(dl), (dt) and (dd) tags:</strong> This is a description list, a term or name, and a term description.</li>
+        <li><strong>(q) tags:</strong> used to mark up quotes embedded in other elements, like a paragraph.</li>
+        <li><strong>(blockquote) tags:</strong> For large stand-alone quotes.</li>
+        <li><strong>(cite) tags:</strong> Marking the source of the quote.</li>
+        <li><strong>(em) tags:</strong> Used to emphasize a word or sentence.</li>
+        <li><strong>(strong) tags:</strong> Used for lots of emphasis, has strong importance and urgency.</li>
+        <li><strong>(i) tags:</strong> Italicizes a wor or sentence. Used for another language, technical term, or title.</li>
+        <li><strong>(b) tags:</strong> Makes a keyword bold.</li>
+        <li><strong>(a href="") link text (/a) tag and attribute:</strong> The <i>a</i> tells where the link should start and end. To create the hyperlink, the <i>href</i> attribute must be used.</li>
+        <li><strong>(img src="" alt=""/) attributes:</strong> This is used to link an image to the website by the HTML document. These two attributes specify the extra detail about the image, meaning the location of the image and the alternative content.</li>
+      </ul>
+    </section>
+
+    <section id="structuring">
+      <h2>HTML STructuring Content</h2>
+      <ul>
+        <li><strong>(header): </strong>It contains the introductory content which is usually found at the top of the page. It would typically include a logo or company name and main navigation.</li>
+        <li><strong>(footer): </strong>Found at the bottom of the page. This often includes lists of links, copyright information, extra information about the company, terms and services.</li>
+        <li><strong>(main): </strong>This wraps around the main content of the page. It is only used once per page and tells the browser that this is where to find the main content.</li>
+        <li><strong>(section): </strong>This is used to wrap around related pieces of content. Usually, each section has its own heading.</li>
+        <li><strong>(article): </strong>This represents a self-contained composition in a web page. Which is intended to be independently distributable or reusable.</li>
+        <li><strong>(nav): </strong>This is the section of a page whose purpose is to provide navigation links. Either within the current document or to other documents.</li>
+        <li><strong>(aside): </strong>This represents a portion of a document whose content is only indirectly related to the document’s main content. This content will frequently be presented as a sidebar on a website.</li>
+        <li><strong>(a href="#...") and (section id="...")</strong>This is how to link to an element on the same page.</li>
+        <li><strong>(!--write your comment here--!):These are comments, they are not displayed by the browser, but they can help document your HTML source codes. </strong></li>
+      </ul>
+    </section>
+
+    <section id="accessibility">
+      <h2>Landmark Roles and Accessibility</h2>
+      <ul>
+        <li>(header <strong>role="banner"</strong>): This is for defining an element as the masthead, which is added to the primary (header).</li>
+        <li>(nav <strong>role="navigation"</strong>): This is for defining an element as the primary navigation, which is added to the top of (nav).</li>
+        <li>(main <strong>role="main"</strong>): This is for defining an element as being the main content of the page, which is added to the (main).</li>
+        <li>(aside <strong>role="complimentary"</strong>): This is for defining an element as being content related to the primary content, which is usually added to an (aside).</li>
+        <li>(footer <strong>role="contentinfo"</strong>): This is for defining an element as information about the content. For example, copyright, terms, privacy policy. Which is usually added to a (footer).</li>
+        <li>(a href="#" <trong>aria-label="..."</trong>): This is an attribute that provides the user with a non-visual label that will only be announced by screen readers. It adds a description of the link.</li>
+        <li>(img src="" alt="" <strong>role=presentation)</strong>): Always describes an image with the alt attribute. If purely decorative you can leave it empty and apply role=“presentation”.</li>
+        <li><strong>Skip link</strong>: These are placed at the top of your page and offer users a way to jump to specific areas of the page. Here is an example:</li>
+        <img src="images/skip-link.png" alt="Example of how to use a skip link properly">
+      </ul>
+    </section>
+
+    <section id="paths">
+      <h2>Paths and URLs</h2>
+      <ul>
+        <li><strong>Paths in the same folder: </strong>From index.html to plesiosaus.html is plesioaurs.html</li>
+        <img src="images/paths-in-same-folder.png" alt="" role="presentation">
+        <li><strong>Moving into folders: </strong>From index.html to logo.svg is image/logo/svg</li>
+        <img src="images/moving-into-folders.png" alt="" role="presentation">
+        <li><strong>Moving out of folders: </strong>From apatosaurus.html to logo.svg is ../images/logo.svg</li>
+        <img src="images/moving-out-of-folders.png" alt="" role="presentation">
+        <li><strong>/:</strong>This is used when moving into folders.</li>
+        <li><strong>../: </strong>This is used when moving out of folders. Add another (.../) each time you move out of a folder.</li>
+      </ul>
+    </section>
+
+    <section id="css-setup">
+      <h2>How to Setup CSS</h2>
+      <ul>
+        <li><strong>CSS file: </strong>Attach within the (head) of the html document using the (link) element.</li>
+        <img src="images/link-element.png" alt="Example of hwo to write this tag, which is the following: (link rel="stylesheet" href="css/style.css")">
+        <li><strong>rel: </strong>Used to define this item as a stylesheet</li>
+        <li><strong>href: </strong>Used to point to the location of the CSS file.</li>
+        <img src="images/rule-set.png" alt="Example of how to write the rule set in the style.css file.">
+        <li><strong>Rule set: </strong> Composed of a selector and one or many declration surrounded by curly braces.</li>
+        <li><strong>Selector: </strong>Identifies which html element should be targeted for styling.</li>
+        <li><strong>Declaration: </strong>Assigns a value to a property, seperated by a colon. Each declaration must end with a semi-colon.</li>
+        <li><strong>Property: </strong>The type of design you want to add. (ex. width, color, border, etc.)</li>
+        <li><strong>Value: </strong>Accepted value for the property. (ex. 30px, blue, etc.)</li>
+        <li><strong>/*______*/: </strong>This is used to comment in CSS. (To write this you can also hold command and press <i>/</i>.</li>
+      </ul>
     </section>
   </main>
 
