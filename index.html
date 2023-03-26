@@ -5,21 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Design 1 Reference Site</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Edu+NSW+ACT+Foundation:wght@600&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header role="banner">
     <h1>Web Design 1: Reference Site </h1>
-    <link rel="stylesheet" href="css/style.css">
 
     <nav>
       <ul>
-        <li><a href="#naming-and-commit">Naming Conventions & Commit Messages</a></li>
-        <li><a href="#html-tags">Commonly Used HTML Tags</a></li>
-        <li><a href="#structuring">HTML Structuring Content</a></li>
-        <li><a href="#accessibility">Landmark Roles and Accessibility</a></li>
-        <li><a href="#paths">Paths and URLs</a></li>
-        <li><a href="#css-setup">How to Set Up CSS</a></li>
-        <li><a href="#selectors">Universal Selectors</a></li>
+        <li><a class="button" href="#naming-and-commit">Naming Conventions & Commit Messages</a></li>
+        <li><a class="button" href="#html-tags">Commonly Used HTML Tags</a></li>
+        <li><a class="button" href="#structuring">HTML Structuring Content</a></li>
+        <li><a class="button" href="#accessibility">Landmark Roles and Accessibility</a></li>
+        <li><a class="button" href="#paths">Paths and URLs</a></li>
+        <li><a class="button" href="#css-setup">How to Set Up CSS</a></li>
+        <li><a class="button" href="#selectors">Universal Selectors</a></li>
+        <li><a class="button" href="#styling-text">Styling Text</a></li>
+        <li><a class="button" href="#styling-links">Styling Links</a></li>
+        <li><a class="button" href="#box">Everything is a Box</a></li>
+        <li><a class="button" href="#display">Display Properties</a></li>
       </ul>
     </nav>
   </header>
@@ -76,7 +83,7 @@
     </section>
 
     <section id="structuring">
-      <h2>HTML STructuring Content</h2>
+      <h2>HTML Structuring Content</h2>
       <ul>
         <li><strong>(header): </strong>It contains the introductory content which is usually found at the top of the page. It would typically include a logo or company name and main navigation.</li>
         <li><strong>(footer): </strong>Found at the bottom of the page. This often includes lists of links, copyright information, extra information about the company, terms and services.</li>
@@ -85,8 +92,8 @@
         <li><strong>(article): </strong>This represents a self-contained composition in a web page. Which is intended to be independently distributable or reusable.</li>
         <li><strong>(nav): </strong>This is the section of a page whose purpose is to provide navigation links. Either within the current document or to other documents.</li>
         <li><strong>(aside): </strong>This represents a portion of a document whose content is only indirectly related to the document’s main content. This content will frequently be presented as a sidebar on a website.</li>
-        <li><strong>(a href="#...") and (section id="...")</strong>This is how to link to an element on the same page.</li>
-        <li><strong>(!--write your comment here--!):These are comments, they are not displayed by the browser, but they can help document your HTML source codes. </strong></li>
+        <li><strong>(a href="#...") and (section id="..."): </strong>This is how to link to an element on the same page.</li>
+        <li><strong>(!--write your comment here--!): </strong>These are comments, they are not displayed by the browser, but they can help document your HTML source codes.</li>
       </ul>
     </section>
 
@@ -134,6 +141,286 @@
         <li><strong>Value: </strong>Accepted value for the property. (ex. 30px, blue, etc.)</li>
         <li><strong>/*______*/: </strong>This is used to comment in CSS. (To write this you can also hold command and press <i>/</i>.</li>
       </ul>
+    </section>
+
+    <section id="selectors">
+      <article>
+        <h2>Universal Selectors</h2>
+        <dl>
+          <dt><strong>Element Selector: </strong>Select all the tags of the same type.</dt>
+            <dd>html {
+            <dd>backround-color: purple;</dd>
+            <dd>}</dd>
+          <dt><strong>Targeting Multiple Elements: </strong>If you’d like to style more than one element the same way you can use a comma to separate the tag names.</dt>
+            <dd>h1, h2, h3 {</dd>
+            <dd>background-color: blue;</dd>
+            <dd>}</dd>
+          <dt><strong>Class Selector: </strong>Select and element that has a class.</dt>
+            <dd>.card-text {</dd>
+            <dd>padding: 0 1em 1em;</dd>
+            <dd>}</dd>
+          <dt><strong>ID Selector: </strong>Select an element that has the ID - remember you can only have one unique ID per page.</dt>
+            <dd>#section {</dd>
+            <dd>background-color: mistyrose;</dd>
+            <dd>}</dd>
+          <dt><strong>Descendant Selector: </strong>Select an element that's a descendant of another element. Refers to elements nested within other elements. To create a descendant selector we'll need to use two or more selectors separated by white space.</dt>
+            <dd>nav li {</dd>
+            <dd>color: #fff;</dd>
+            <dd>}</dd>
+          <dt><strong>Child Selectors: </strong>Select and element directly inside another element.</dt>
+            <dd>div > h3 {</dd>
+            <dd>text-transform: uppercase;</dd>
+            <dd>}</dd>
+          <dt><strong>Adjacent Sibling: </strong>Select an element immediately beside another element.</dt>
+            <dd>h2 + p {</dd>
+            <dd>color: orchid;</dd>
+            <dd>}</dd>
+          <dt><strong>General Sibling: </strong>Select an element that's at the same level.</dt>
+            <dd>h3 ~ a {</dd>
+            <dd>padding: .25em .75em;</dd>
+            <dd>}</dd>
+          <dt><strong>Combine Multiple Type of Selectors: </strong></dt>
+            <dd>#section > h2 ~ p strong {</dd>
+            <dd>color: green;</dd>
+            <dd>}</dd>
+          <dt><strong>Attribute: </strong>Select an element by it's attribute.</dt>
+            <dd>A[target="blank"] {</dd>
+            <dd>font-weight: bold;</dd>
+            <dd>color: #f80;</dd>
+            <dd>}</dd>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Pseudo Classes</h3>
+        <dl>
+          <dt><strong>first-child: </strong>Select the element when it's the first inside it's parent.</dt>
+            <dd>ul li: first-child {</dd>
+            <dd>background-color: #ff4858;</dd>
+            <dd>}</dd>
+          <dt><strong>last-child: </strong>Select the element when it's the last inside it's parent.</dt>
+            <dd>ul li: last-child {</dd>
+            <dd>background-color: #00ccc0;</dd>
+            <dd>}</dd>
+          <dt><strong>nth-child(): </strong>Select and element by it's number.</dt>
+            <dd>li: nth-child(3) {</dd>
+            <dd>background-color: purple;</dd>
+            <dd>}</dd>
+          <dt><strong>first-of-type: </strong>Select an element that's the first of it's kind within its parent.</dt>
+            <dd>p: first-of-type {</dd>
+            <dd>font-style: italic;</dd>
+            <dd>}</dd>
+        </dl>
+      </article>
+    </section>
+
+    <section id="styling-text">
+      <h2>Styling Text</h2>
+      <article>
+        <h3>Font Properties</h3>
+        <dl>
+          <dt><strong>font-size: </strong>For adjusting the size of the font. A single number with a unit (rem [best choice], em, px).</dt>
+            <dd>ex. 2rem, 1.25em, 24px</dd>
+          <dt><strong>font-weight: </strong>Sets how thick or thin characters in text should be displayed.</dt>
+            <dd>ex. bold, normal, 700</dd>
+          <dt><strong>font-style: </strong>Specifies font style for text.</dt>
+            <dd>ex. italic or normal</dd>
+          <dt><strong>line-height: </strong>For adjusting the line-height. A single number, a miltiplier that multiplies the font-size.</dt>
+            <dd>ex. 1.5</dd>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Text Decorations</h3>
+        <dl>
+          <dt><strong>text-transform: </strong>Change capitalization such as upper case, lowercase, capitalize. It’s a good idea to use CSS to make all caps instead of writing it directly in HTML for accessibility purposes.</dt>
+            <dd>ex. uppercase, lowercase, capitalize</dd>
+          <dt><strong>text-decorations: </strong>Specifies the decoration added to text. The only things in a website that should be underlined are links.</dt>
+            <dd>ex. none, underline, line-through, overline</dd>
+          <dt><strong>text-align: </strong>Specifies the horizontal alignment of text in an element.</dt>
+            <dd>ex. left, center (American spelling), right, justify</dd>
+          <dt><strong>text-indent: </strong>Indents the first line of text like traditionally printed materials.</dt>
+            <dd>ex. 1rem, 2em, 20px, 25%</dd>
+          <dt><strong>text-shadow: </strong>Adding a shadow to the text. Specified like this:</dt>
+            <dd>text-shadow: horizontal-offset vertical-offset blur-radius color</dd>
+            <dd>ex. text-shadow: 2px 2px #ff0000;</dd>
+        </dl>
+      </article>
+    </section>
+
+    <section id="styling-links">
+      <h2>Styling Links</h2>
+      <dl>
+        <dt><strong>Unvisited Link: </strong>For styling the default link state.</dt>
+          <dd>a:link {</dd>
+          <dd>color: orange;</dd>
+          <dd>}</dd>
+        <dt><strong>Visited Link: </strong>For styling the link after it's been visited by the user.</dt>
+          <dd>a:visited {</dd>
+          <dd>color: limegreen;</dd>
+          <dd>}</dd>
+        <dt><strong>Mouse Over Link: </strong>For styling the link when the mouse is sitting over it.</dt>
+          <dd>a:hover {</dd>
+          <dd>color: purple;</dd>
+          <dd>}</dd>
+        <dt><strong>Focus Link: </strong>For styling the link when the keyboard has tab-focused it.</dt>
+          <dd>a:focus {</dd>
+          <dd>color: blue;</dd>
+          <dd>}</dd>
+        <dt><strong>Selected Link: </strong>For styling the link when the mouse button is pressed down on it.</dt>
+          <dd>a:active {</dd>
+          <dd>color: yellow;</dd>
+          <dd>}</dd>
+        <dt>Add same style to more than one link state.</dt>
+          <dd>a:link,</dd>
+          <dd>a:visited {</dd>
+          <dd>color: yellow;</dd>
+          <dd>}</dd>
+      </dl>
+    </section>
+
+    <section id="box">
+      <h2>Everything is a Box</h2>
+      <article>
+        <h3>The CSS Box Model</h3>
+        <p>The box model is a box that wraps around every HTML element; made up of four parts: content, padding, border and margins.</p>
+
+        <ul>
+          <li><strong>Content: </strong>First layer, defines the basic box.</li>
+          <li><strong>Padding: </strong>Outside content, pushing the edge of the box away from the content.</li>
+          <li><strong>Border: </strong>Stroke at the edge of padding and aroun th edge of the box. Background colour ends here.</li>
+          <li><strong>Margin: </strong>It is outside of the box, the layer pushing other boxes away. Space around an element that seperates it from other elements.</li>
+          <img src="images/box-model.png" alt="" role="presentation">
+          <li><strong>Box Model Tool With Dev Tools: </strong>If you inspect and element on a browser, you can see the size of the element and its margin, padding, and border.</li>
+          <img src="images/box-model-tool.png" alt="" role="presentation">
+        </ul>
+      </article>
+
+      <article>
+        <h3>Padding and Margins</h3>
+        <p>These two properties are used to apply space, either inside te box or outside the box.</p>
+
+        <dl>
+          <dt><strong>Padding: </strong>Adds spacing inside the box, pushing content away from the border.</dt>
+            <dd>.box {</dd>
+            <dd>padding-top: 0;</dd>
+            <dd>padding-right: 30px;</dd>
+            <dd>padding-bottom: 40px;</dd>
+            <dd>padding-left: 4em;</dd>
+            <dd>}</dd>
+          <dt><strong>Margin: </strong>Invisible space around the box. Adds spacing outside the box, pushing away other boxes away from the box.</dt>
+            <dd>.box {</dd>
+            <dd>margin-top: -10px;</dd>
+            <dd>margin-right: 30px;</dd>
+            <dd>margin-bottom: 40px;</dd>
+            <dd>margin-left: 4em;</dd>
+            <dd>}</dd>
+          <dt><strong>Shorthands: </strong>Start at the top and make your way clockwise around the box. If you leave numbers from the list, the browser will match the opposing sides value for any mossing numbers.</dt>
+            <dd>.box {</dd>
+            <dd>padding: 0 30px 40px 4em;</dd>
+            <dd>margin: -10px 30px 40px 4em;</dd>
+            <dd>}</dd>
+          <img src="images/padding.png" alt="" role="presentation">
+          <dt><strong>Margin Collapsing: </strong>The bottom value of one box can collapse into the top value of the next. The browser choosing only the highest of the two.</dt>
+          <img src="images/margin.png" alt="Example of first box having a bottom margin of 15px and the second box having a top margin of 25px.">
+            <dd>The distance between these is not 40px. Instead, the browser picks the bigger f the two and chooses it. The margin between these boxes is 25px</dd>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Width and Height</h3>
+        <p>This is used to set the height and width of an element.</p>
+
+        <dl>
+          <dt><strong>%: </strong>Use percent for elements that should grow with the size of the browser.</dt>
+            <dd>ex. columns, images</dd>
+          <dt><strong>em: </strong>Use ems for elements that should grow with the size of the text.</dt>
+            <dd>ex. line-length</dd>
+          <dt><strong>px: </strong>Use pixels for things that should never change size.</dt>
+            <dd>ex. logos, icons</dd>
+          <dt><strong>min-width: </strong>Force the box to be at least this wide, but can grow wider.</dt>
+          <dt><strong>min-height: </strong>Force the box to be at least this tall, but can grow taller.</dt>
+          <dt><strong>max-width: </strong>Force the box to never exceed this width, but can get narrower than it.</dt>
+          <dt><strong>max-height: </strong>Force the box to never exceed this height, but can get shorter than it.</dt>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Border Box</h3>
+        <ul>
+          <li><strong>Default Box Model: </strong>The padding and border add onto the width of the box, making it wider.</li>
+          <img src="images/default-box.png" alt="" role="presentation">
+          <li><strong>Border Box: </strong>The padding and border are inside the width of the box, so the total width is the same as the value width.</li>
+          <img src="images/border-box.png" alt="" role="presentation">
+          <li>Always put this at the top of every CSS file.</li>
+          <img src="images/box-sizing.png" alt="css box sizing selectors">
+        </ul>
+      </article>
+    </section>
+
+    <section id="display">
+      <article>
+        <h2>Display Properties</h2>
+        <p>This sets the display of an element. It manages and alters how the HTML elements are shown on the web page.</p>
+
+        <dl>
+          <dt><strong>display: inline;</strong></dt>
+            <dd>Allows elements on the same line; height and width properties have no effect.</dd>
+            <dd>Allows other elements to fit beside them on the same line.</dd>
+            <dd>Takes up only as much width as needed.</dd>
+            <dd>Width, margin, padding don't really work.</dd>
+            <img src="images/common-inline.png" alt="List of common inline level elements.">
+          <dt><strong>display: block;</strong></dt>
+            <dd>Force the element to be on its own line regardless of its width.</dd>
+            <dd>Takes up its own line, anything that comes after goes onto the next line.</dd>
+            <dd>Takes up the whole width of its parent element by default.</dd>
+            <dd>Width, margin, padding works as expected.</dd>
+            <img src="images/common-block.png" alt="Lit of common block level elements.">
+          <dt><strong>display: inline-block;</strong></dt>
+            <dd>Element is formatted as an iline element but you can apply height and widt values.</dd>
+            <dd>Fits beside other elements on the same line (from inline).</dd>
+            <dd>Takes up only as much space as needed (from inline).</dd>
+            <dd>Width, margin, padding work as expected (from block).</dd>
+            <img src="images/common-inline-block.png" alt="List of common inline-block level elements.">
+          <dt><strong>display: none;</strong></dt>
+            <dd>The element is completely removed.</dd>
+            <dd>This completely hides the element from the screen and any other accessibility tools.</dd>
+            <img src="images/common-none.png" alt="" role="presentation">
+        </dl>
+      </article>
+
+      <article>
+        <h3>Centering Elements</h3>
+
+        <dl>
+          <dt><strong>text-align: center; </strong>On inline and inline-block elements.</dt>
+            <dd>If applied to the element itself, it will only center the content inside of the box.</dd>
+            <dd>If applied to the parent, it will center the boxes within the page.</dd>
+            <img src="images/inline-center.png" alt="" role="presentation">
+          <dt><strong>text-align: center; </strong>On block elements.</dt>
+            <dd>This only affects the content inside it, but will not move the element box itself to the center of its parent.</dd>
+            <img src="images/block-center.png" alt="" role="presentation">
+          <dt><strong>margin: 0 auto; </strong>On block elements.</dt>
+            <dd>If there is a block element with a width, and want it to center within its parent, use auto margins.</dd>
+            <dd><strong>Auto: </strong>This tells the browser to automatically calculate a margin that's the same on the left and right.</dd>
+            <img src="images/margin-auto.png" alt="" role="presentation">
+        </dl>
+      </article>
+
+      <article>
+        <h3>Floats and Clear</h3>
+        <p>This allows text to wrap around another HTML element.</p>
+
+        <ul>
+          <li><strong>float: left; </strong>Moves the element to the left, allowing text to wrap on the right side.</li>
+          <li><strong>float: right; </strong>Moves the element to the right, allowing text to wrap on the left side.</li>
+          <li><strong>float: none; </strong>Would turn floating off.</li>
+          <li><strong>Wrapping with float: </strong>To push the text away from floated element, margin will work well.</li>
+          <li><strong>clear: left; </strong>Goes below all left floated elements.</li>
+          <li><strong>clear: right; </strong>Goes below all right floated elements.</li>
+          <li><strong>clear: both; </strong> Goes below all floated elements.</li>
+        </ul>
+      </article>
     </section>
   </main>
 
