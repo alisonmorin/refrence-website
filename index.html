@@ -27,7 +27,7 @@
         <li><a class="button" href="#styling-links">Styling Links</a></li>
         <li><a class="button" href="#box">Everything is a Box</a></li>
         <li><a class="button" href="#display">Display Properties</a></li>
-        <li><a class="button" href="#felx">Flex Box</a></li>
+        <li><a class="button" href="#flex">Flex Box</a></li>
       </ul>
     </nav>
   </header>
@@ -422,6 +422,86 @@
           <li><strong>clear: both; </strong> Goes below all floated elements.</li>
         </ul>
       </article>
+    </section>
+
+    <section id="flex">
+      <h2>Flex Box</h2>
+      <p>Controls the flow and alignment of elements for more complex layouts.</p>
+
+      <dl>
+        <dt><strong>Works on Children: </strong>Many of the flexbox properties are applied to the parent element, but affect the child elements.</dt>
+        <dt><strong>The Flex Container: </strong>To create a flex container, we select the parent element in our CSS and set the value to display: flex; Now all direct children are considered flex items.</dt>
+          <dd>section {</dd>
+          <dd>display: flex;</dd>
+          <dd>}</dd>
+        <dt><strong>When Flex is Applied: </strong>Some initial values will be defined. Flex items will behave in the following ways:</dt>
+          <dd>Items display in a row (flex-direction property's default is row).</dd>
+          <dd>The items start from  the start edge of the main axis.</dd>
+          <dd>The items will stretch to fill the size of the cross axis.</dd>
+          <dd>The flex-wrap property is set to nowrap.</dd>
+        <dt><strong>flex vs. inline-flex: </strong>Setting our flex containers to behave like block or inline-block elements.</dt>
+        <img src="images/flex-inline-flex.png" alt="" role="presentation">
+        <dt><strong>Flex Direction: </strong>Change the orientation in how your conten is displayed, justified and aligned.</dt>
+          <dd>This establishes the main-axis, which defines the direction flex items are placed in the flex container.</dd>
+          <dd>Flexbox is a single-direction layout concept.</dd>
+          <img src="images/flex-direction.png" alt="Visual representation of flex-direction: row|row-revrese|column|column-reverse">
+        <dt><strong>Wrapping Flex Items: </strong>With this property, you can control wether the flex container is a single -line or multi-line layout.</dt>
+          <dd>The flex container can break flex items onto multiple lines and allow them to wrap as needed.</dd>
+          <img src="images/flex-wrap.png" alt="" role="presentation">
+      </dl>
+
+      <dl>
+        <dt><strong>justify-content: </strong>Lets you control the position and alignment of flex container items on the main axis, and how much space is between flex items</dt>
+          <dd>The default value is flex-start, which places items toward the start of each flex line.</dd>
+          <dd>Other accepted values include: flex-end, center, space-between, space-around and space-evenly.</dd>
+        <dt><strong>flex-start: </strong>The default position which will line items up at the start edge of the container.</dt>
+        <img src="images/justify-flex-start.png" alt="" role="presentation">
+        <dt><strong>flex-end: </strong>Line items up at the end of the container.</dt>
+        <img src="images/justify-flex-end.png" alt="" role="presentation">
+        <dt><strong>center: </strong>Move all of the items into the center of the flex container.</dt>
+        <img src="images/justify-center.png" alt="" role="presentation">
+        <dt><strong>space-between: </strong>Items touch the start & end edges of the flex container then envenly distributes the space between.</dt>
+        <img src="images/justify-space-between.png" alt="" role="presentation">
+        <dt><strong>space-around: </strong>Distributes items evenly with equal space around each item (doubled up between each item).</dt>
+        <img src="images/justify-space-around.png" alt="" role="presenation">
+        <dt><strong>space-evenly: </strong>Distributes items with equal space around all items.</dt>
+        <img src="images/justify-space-evenly.png" alt="" role="presentation">
+      </dl>
+
+      <dl>
+        <dt><strong>align-items: </strong>This works on the cross axis.</dt>
+          <dd>Accepted values include: stretch, flex-start, flex-end and center.</dd>
+          <dd><strong>Note: </strong>With align-items applied to the flex container, all direct children will use the alignment. If you set one or more of the child items using align-self, it will override property set on the flex container for those specific instances.</dd>
+        <dt><strong>stretch: </strong>The initial value for the property and why flex items stretch to the height of the container by default.</dt>
+        <img src="images/items-stretch.png" alt="" role="presentation">
+        <dt><strong>flex-start: </strong>Line items up at the start of a container.</dt>
+        <img src="images/items-flex-start.png" alt="" role="presentation">
+        <dt><strong>flex-end: </strong>Line items up at the end of a container.</dt>
+        <img src="images/items-flex-end.png" alt="" role="presentation">
+        <dt><strong>center: </strong>Line items in the center.</dt>
+        <img src="images/items-center.png" alt="" role="presentation">
+      </dl>
+
+      <dl>
+        <dt><strong>align-content: </strong>Aligns a flex containers lines when there is extra space on the cross-axis.</dt>
+          <dd>Accepted values include: normal, flex-start, flex-end, center, space-between, space-around, space-evenly and stretch.</dd>
+          <dd><strong>Note: </strong>align-content requires extra space (height) to exist in order to be applied and this property has no effect on single line flex containers (i.e. ones with flex-wrap: nowrap).</dd>
+        <dt><strong>normal: </strong>The default with the items packed in their default position as if no value was set.</dt>
+        <dt><strong>flex-start: </strong>Items are packed to the start of the  container.</dt>
+        <img src="images/content-flex-start.png" alt="" role="presentation">
+        <dt><strong>flex-end: </strong>The items are packed to the end of the container.</dt>
+        <img src="images/content-flex-end.png" alt="" role="presentation">
+        <dt><strong>center: </strong>The items are packed centered int the container.</dt>
+        <img src="images/content-center.png" alt="" role="presentation">
+        <dt><strong>space-between: </strong>Items are evenly distributed; first line is at the start of the container, last one at the end.</dt>
+        <img src="images/content-space-between.png" alt="" role="presentation">
+        <dt><strong>space-around: </strong>Items are evenly distributed with equal space around each line.</dt>
+        <img src="images/content-space-around.png" alt="" role="presentation">
+        <dt><strong>space-evenly: </strong>Items are evenly distributed wih equal space around them.</dt>
+        <img src="images/content-space-evenly.png" alt="" role="presentation">
+        <dt><strong>stretch: </strong>Lines are stretched to take up the remaining space.</dt>
+        <img src="images/content-stretch.png" alt="" role="presentation">
+      </dl>
     </section>
   </main>
 
